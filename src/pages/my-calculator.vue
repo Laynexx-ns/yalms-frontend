@@ -19,6 +19,7 @@ const handleSendEvaluationRequest = async () =>{
     calculatedResponse.value = response
   } catch(e){
     console.error(e);
+    errorText.value = e;
   }
 }
 
@@ -73,7 +74,7 @@ const handleSendEvaluationRequest = async () =>{
     </div>
 
     <div v-if="errorText" class="appearing-item bg-block w-full max-w-sm rounded-3xl flex flex-col gap-4 p-6">
-      <span class="text-white/50">Возникла ошибка</span>
+      <span class="text-white/50">Возникла ошибка. Вероятно оркестратор выключен</span>
         <span class="text-bold">{{errorText}}</span>
 
     </div>
