@@ -19,12 +19,12 @@ const emit = defineEmits(['applyChangePage', 'update:showingData'])
     </h2>
 
 
-    <div class="flex flex-col gap-4">
+    <div class="card-container flex flex-col gap-4">
       <!--        card 1-->
-      <RouterLink to="/calculate">
+      <RouterLink  to="/calculate">
         <div
             @click=""
-            class="card"
+            class=" card"
         >
           <Calculator/>
           <div
@@ -78,5 +78,17 @@ const emit = defineEmits(['applyChangePage', 'update:showingData'])
 </template>
 
 <style scoped>
+
+@keyframes left-slide-appear {
+  from{
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateX(20px);
+  }
+  to{
+    opacity: 100;
+    filter: none;
+  }
+}
 
 </style>
