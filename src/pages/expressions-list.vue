@@ -27,7 +27,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-screen w-full bg-gradient-to-b from-[#121214] to-[#09090b] text-white">
+  <div class="min-h-screen w-full  text-white">
     <RouterLink class="w-full p-6 md:p-12 flex justify-center items-center" to="/">
       <button
           class="text-sm text-white/50 hover:text-white transition-colors flex items-center gap-2 absolute top-8"
