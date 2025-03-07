@@ -11,6 +11,7 @@ const validate = computed(() => /^[0-9.+\-*/]+$/.test(expression.value))
 
 const handleSendEvaluationRequest = async () =>{
   try{
+    errorText.value = ''
     calculatedResponse.value = ''
     const response = await axios.post("http://localhost:8080/api/v1/calculate", {
       expression: expression.value
@@ -33,7 +34,7 @@ const handleSendEvaluationRequest = async () =>{
     >Вернуться назад</button>
   </RouterLink>
 
-  <div class="min-h-screen w-screen flex flex-col gap-8 items-center justify-center px-10 text-white transition-all">
+  <div class="appearing-item min-h-screen w-screen flex flex-col gap-8 items-center justify-center px-10 text-white transition-all">
     <div class="bg-block w-full max-w-sm rounded-3xl flex flex-col gap-4 p-6 transition-all">
       <span class="text-2xl bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent font-bold ">Калькулятор</span>
       <input v-model="expression" class="px-2 py-3 text-xl font-bold focus:ring-0 outline-none rounded-xl bg-[#09090b]"/>

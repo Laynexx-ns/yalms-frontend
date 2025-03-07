@@ -58,24 +58,6 @@ const handleUpdateShowingData = (value : number) =>{
   animation-timing-function: ease;
 }
 
-.card {
-  @apply flex items-center gap-4 p-5 rounded-2xl bg-purple-400
-  cursor-pointer transition-all duration-300 ;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transform: translateY(0);
-}
-
-.card::before {
-  content: '';
-  @apply absolute inset-0 bg-gradient-to-r  opacity-0 transition-opacity duration-500;
-}
-
-
-.card:hover {
-  @apply scale-[1.05] shadow-xl bg-pink-500
-}
-
-
 @keyframes appear {
   from {
     opacity: 0;

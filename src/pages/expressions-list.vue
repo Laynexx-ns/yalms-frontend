@@ -1,22 +1,17 @@
 <script setup lang="ts">
 import { onMounted, ref, computed } from "vue";
 import axios from "axios";
+import {Expression} from "@/types";
+import ExpressionsCard from "@/components/expressions-card.vue";
 
-interface Response {
-  Id: number,
-  Status: string,
-  Result: number
-}
 
-const responseValues = ref<Response[]>([]);
+const responseValues = ref<Expression[]>([]);
 
 
 onMounted(async () => {
   try {
-    isLoading.value = true;
     const response = await axios.get("http://localhost:8080/api/v1/expressions");
     responseValues.value = response.data;
-    isLoading.value = false;
   } catch (e) {
     console.error(e);
 
@@ -27,7 +22,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-screen w-full  text-white">
+  <div class="min-h-screen max-w-screen-md w-full text-white">
     <RouterLink class="w-full p-6 md:p-12 flex justify-center items-center" to="/">
       <button
           class="text-sm text-white/50 hover:text-white transition-colors flex items-center gap-2 absolute top-8"
@@ -42,7 +37,9 @@ onMounted(async () => {
         <p class="text-gray-400 mb-6">Просмотр всех выполненных операций и их результатов</p>
       </div>
 
-
+      <div class="w-full gap-4 grid grid-cols-1 md:grid-cols-2">
+        <ExpressionsCard class="hover:scale:105" v-for="(item, index) in responseValues" :key="index" :item="item"/>
+      </div>
     </div>
   </div>
 </template>
@@ -92,4 +89,15 @@ onMounted(async () => {
 .grid > div:nth-child(8) { animation-delay: 0.45s; }
 .grid > div:nth-child(9) { animation-delay: 0.5s; }
 .grid > div:nth-child(10) { animation-delay: 0.55s; }
+.grid > div:nth-child(11) { animation-delay: 0.6s; }
+.grid > div:nth-child(12) { animation-delay: 0.65s; }
+.grid > div:nth-child(13) { animation-delay: 0.7s; }
+.grid > div:nth-child(14) { animation-delay: 0.75s; }
+.grid > div:nth-child(15) { animation-delay: 0.8s; }
+.grid > div:nth-child(16) { animation-delay: 0.85s; }
+.grid > div:nth-child(17) { animation-delay: 0.9s; }
+.grid > div:nth-child(18) { animation-delay: 0.95s; }
+.grid > div:nth-child(19) { animation-delay:  1s; }
+.grid > div:nth-child(20) { animation-delay: 1.05s; }
+
 </style>
