@@ -14,7 +14,10 @@ const handleSendEvaluationRequest = async () =>{
     errorText.value = ''
     calculatedResponse.value = ''
     const response = await axios.post("http://localhost:8080/api/v1/calculate", {
-      expression: expression.value
+      expression: expression.value,
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
     console.log(response)
     calculatedResponse.value = response

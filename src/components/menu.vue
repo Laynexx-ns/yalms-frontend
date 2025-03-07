@@ -115,7 +115,7 @@ const emit = defineEmits(['applyChangePage', 'update:showingData'])
 .animate-delay-1{
   opacity: 0;
   animation-name: left-slide-appear;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-fill-mode: both;
 }
@@ -123,18 +123,18 @@ const emit = defineEmits(['applyChangePage', 'update:showingData'])
 .animate-delay-2{
   opacity: 0;
   animation-name: left-slide-appear;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: ease;
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
   animation-fill-mode: both;
 }
 
 .animate-delay-3{
   opacity: 0;
   animation-name: left-slide-appear;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: ease;
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
   animation-fill-mode: both;
 }
 
